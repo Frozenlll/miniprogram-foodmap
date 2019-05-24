@@ -5,9 +5,21 @@ App({
     /**
      * 初始化 MTA  检测
      */
-    mta.App.init({
+    /*mta.App.init({
       "appID": config.mtaAppID,
       "eventID": config.mtaEventID,
+      "statShareApp": true,
+      "statReachBottom": true,
+      "lauchOpts": options,
+    });*/
+
+    mta.App.init({
+      "appID": "500684263",
+      "eventID": "500684297",
+      "autoReport": true,
+      "statParam": true,
+      "ignoreParams": [],
+      "statPullDownFresh": true,
       "statShareApp": true,
       "statReachBottom": true,
       "lauchOpts": options,

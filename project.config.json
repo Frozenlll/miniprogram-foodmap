@@ -10,9 +10,11 @@
 		"autoAudits": false,
 		"nodeModules": true
 	},
-	"appid": "wxd1ca70db507085dd",
-	"projectname": "meishitujian",
+	"appid": "wx54b033dfc5b53b98",
+	"projectname": "%E7%99%BD%E7%8E%89%E5%AE%9A%E4%BD%8D",
 	"libVersion": "2.4.4",
+	"simulatorType": "wechat",
+	"simulatorPluginLibVersion": {},
 	"condition": {
 		"search": {
 			"current": -1,
