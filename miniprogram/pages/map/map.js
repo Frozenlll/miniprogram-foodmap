@@ -1,9 +1,9 @@
-const mta = require('../../vendor/mta_analysis.js');
-const app = getApp();
-const config = require('../../config.js');
-const db = wx.cloud.database()
-const store = db.collection('store');
-const userInfo = db.collection('userInfo');
+var mta = require('../../vendor/mta_analysis.js');
+var app = getApp();
+var config = require('../../config.js');
+var db = wx.cloud.database()
+var store = db.collection('store');
+var userInfo = db.collection('userInfo');
 
 Page({
 
@@ -16,7 +16,7 @@ Page({
     windowHeight: 600,
     mapSubKey: config.mapSubKey,
     hideMe:true,
-    showAdmin:false,
+    showAdmin:config.show_admin,
   },
 
   /**
@@ -130,9 +130,9 @@ Page({
    */
   onShareAppMessage: function () {
     return {
-      title: '我在' + config.appName + '上发现了好吃的，你也看看吧！',
+      title: '我在' + config.appName + '上发现了养生茶，你也看看吧！',
       path: '/pages/map/map?_mta_ref_id=group',
-      imageUrl: "/images/share.jpg"
+      imageUrl: "/images/all-3.png"
     }
   },
   onMarkerTap: function (event) {

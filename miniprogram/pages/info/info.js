@@ -1,8 +1,8 @@
-const mta = require('../../vendor/mta_analysis.js');
-const app = getApp();
-const db = wx.cloud.database()
-const store = db.collection('store');
-const config = require('../../config.js');
+var mta = require('../../vendor/mta_analysis.js');
+var app = getApp();
+var db = wx.cloud.database()
+var store = db.collection('store');
+var config = require('../../config.js');
 Page({
 
   /**
@@ -62,13 +62,13 @@ Page({
    */
   onShareAppMessage: function () {
     let path = '/pages/info/info?id=' + this.data.store._id;
-    let image = "/images/share.jpg";
+    let image = "/images/all-3.png";
     if (this.data.store.images[0]){
       wx.cloud.getTempFileURL({
         fileList: [this.data.store.images[0]],
         success: res =>{
           return {
-            title: '我在' + config.appName + '上发现了好吃的，你也看看吧！',
+            title: '我在' + config.appName + '找到了线下自取点',
             path: path,
             imageUrl: res.fileList[0].tempFileURL
           }
@@ -79,7 +79,7 @@ Page({
       })
     }else{
       return {
-        title: '我在' + config.appName + '上发现了好吃的，你也看看吧！',
+        title: '我在' + config.appName + '找到了线下自取点',
         path: path,
         imageUrl: image
       }

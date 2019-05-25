@@ -6,13 +6,16 @@
   padding:10rpx;
 }
 .card_title{
-  font-size: 50rpx;
-  font-weight: 700;
+  position: absolute;
+  font-size: 35rpx;
+  font-weight: 500;
+  margin-left: 15%;
 }
 .card_infobar{
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  margin-left: 15%;
 }
 .card_address{
   font-size: 30rpx;
@@ -34,4 +37,14 @@
 }
 .input-placeholder{
   text-align: center;
+}
+.icon{
+  position: absolute;
+  width: 7%;
+  height: 7%;
+}
+.name{
+  font-size: 30rpx;
+  font-weight: 500;
+  margin-left: 50%;
 }

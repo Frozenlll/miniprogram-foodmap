@@ -1,14 +1,20 @@
-const mta = require('../../vendor/mta_analysis.js');
-const app = getApp();
-const db = wx.cloud.database()
-const store = db.collection('store');
+var mta = require('../../vendor/mta_analysis.js');
+var app = getApp();
+var db = wx.cloud.database()
+var store = db.collection('store');
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-
+    /*
+    __webviewId__: 8,
+    address: 上海市浦东新区临港新城海港大道1550号,
+    latitude: 30.874850,
+    longitude: 121.904470,
+		name: 上海海事大学,
+    */
   },
 
   /**

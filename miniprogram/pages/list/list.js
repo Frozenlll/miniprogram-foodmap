@@ -1,7 +1,7 @@
-const mta = require('../../vendor/mta_analysis.js');
-const app = getApp();
-const db = wx.cloud.database()
-const store = db.collection('store');
+var mta = require('../../vendor/mta_analysis.js');
+var app = getApp();
+var db = wx.cloud.database();
+var store = db.collection('store');
 Page({
 
   /**

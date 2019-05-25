@@ -1,5 +1,5 @@
-const mta = require('vendor/mta_analysis.js');
-const config = require('config.js');
+var mta = require('vendor/mta_analysis.js');
+var config = require('config.js');
 App({
   onLaunch: function (options) {
     /**
