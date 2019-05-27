@@ -30,8 +30,18 @@
     <cover-view class="button show_all" bindtap="viewAll" bindlongpress='showAdmin'>查看全部</cover-view>
     -->
     <!--详情页面-->
-    <cover-view class="detail">
-    <scroll-view scroll-y="true">
+    <cover-view class="detail" scroll-top="{{scrolltop}}">
+    <cover-view wx:for="{{stores}}" wx:key="_id" class="ul">
+    <navigator url="../info/info?id={{item._id}}">
+    <cover-view class="card li">
+    <cover-image class="icon" src="{{item.iconPath}}"></cover-image>
+    <cover-view></cover-view>
+    <cover-view>{{item.title}}</cover-view>
+    </cover-view>
+    </navigator>
+    </cover-view>
+    </cover-view>
+    <!--<scroll-view scroll-y="true">
     <block wx:for="{{stores}}" wx:key="_id">
       <navigator url="../info/info?id={{item._id}}">
         <view class="card">
@@ -41,13 +51,13 @@
           <view class="card_address">{{item.address}}</view>
           <view>{{item.contact}}</view>
           <view class="card_thumbsup">{{item.thumbs_up}}</view>
-          </view>-->
+          </view>
         <view class="name">{{item.title}}</view>
         </view>
       </navigator>
     </block>
     </scroll-view>
-    </cover-view>
+    -->
     
  
 </map>

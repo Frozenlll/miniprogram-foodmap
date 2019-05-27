@@ -17,6 +17,7 @@ Page({
     mapSubKey: config.mapSubKey,
     hideMe:true,
     showAdmin:config.show_admin,
+    scrolltop:0,
   },
 
   /**
@@ -36,16 +37,25 @@ Page({
     mta.Page.init();
     store.get().then(res => {
       let data = res.data;
+      
       // 将 _id 给 id ,确保 marker 事件的正确触发
       data.map(item => {
-        item.id = item._id
+        item.id = item._id;
       });
+      wx.nextTick(() => {
+        let top = res.scrolltop + 999
+        setTimeout(function () {
+          that.setData({
+            scrolltop: top
+          })
+        }, 500)
+      })
       this.setData({
         stores: res.data,
         windowHeight: app.globalData.windowHeight,
         hideMe:false,
         showAdmin: showAdmin,
-        defaultScale: config.default_scale
+        defaultScale: config.default_scale,
       }, () => {
         wx.hideLoading();
         wx.showToast({
@@ -65,7 +75,7 @@ Page({
         item.id = item._id
       });
       this.setData({
-        stores: res.data
+        stores: res.data,
       })
     })
   },
