@@ -42,14 +42,6 @@ Page({
       data.map(item => {
         item.id = item._id;
       });
-      wx.nextTick(() => {
-        let top = res.scrolltop + 999
-        setTimeout(function () {
-          that.setData({
-            scrolltop: top
-          })
-        }, 500)
-      })
       this.setData({
         stores: res.data,
         windowHeight: app.globalData.windowHeight,

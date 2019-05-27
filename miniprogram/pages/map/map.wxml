@@ -22,24 +22,27 @@
         bindlongpress='getOpenID' lang='zh_CN'>管理入口</button>
     </cover-view>
     -->
-    <!-- 搜索按钮 -->
+    <!-- 搜索按钮 
     <cover-view wx:else class="cover">
       <button class='button' bindtap='search'>搜索</button>
-    </cover-view>
+    </cover-view> -->
     <!-- 查看全部 
     <cover-view class="button show_all" bindtap="viewAll" bindlongpress='showAdmin'>查看全部</cover-view>
     -->
     <!--详情页面-->
     <cover-view class="detail" scroll-top="{{scrolltop}}">
-    <cover-view wx:for="{{stores}}" wx:key="_id" class="ul">
-    <navigator url="../info/info?id={{item._id}}">
-    <cover-view class="card li">
-    <cover-image class="icon" src="{{item.iconPath}}"></cover-image>
-    <cover-view></cover-view>
-    <cover-view>{{item.title}}</cover-view>
-    </cover-view>
-    </navigator>
-    </cover-view>
+      <cover-view class="ul">
+        <cover-view wx:for="{{stores}}" wx:key="_id" class="li">
+          <navigator url="../info/info?id={{item._id}}">
+          <cover-view class="card">
+            <cover-image class="icon" src="{{item.iconPath}}"></cover-image>
+            <cover-view class="card_title">{{item.number}}</cover-view>
+            <cover-view class="status">正常</cover-view>
+            <cover-view class="name">{{item.title}}</cover-view>
+          </cover-view>
+          </navigator>
+        </cover-view>
+      </cover-view>
     </cover-view>
     <!--<scroll-view scroll-y="true">
     <block wx:for="{{stores}}" wx:key="_id">
